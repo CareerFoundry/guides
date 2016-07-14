@@ -62,6 +62,22 @@ The main steps you need are:  2.2, 2.3, 2.4
 
 If you're using `protect_from_forgery` anywhere 2.12 is important, too. Otherwise that's probably all you need.
 
+## Update your application layout
+
+In the `app/views/layouts/application.html.erb` file of your app you will have these two lines:
+
+```
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+```
+
+You'll have to update them to look like this:
+
+```
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+```
+
 ## Update your JavaScript
 
 With Turbolinks 5 (got released together with Rails 5) neither `$(document).ready(function(){ ... })` nor `$(document).on('ready page:load', function(){ ... })` will work anymore. Instead they came up with an even better solution which loads even faster and even on page load:
@@ -74,4 +90,64 @@ $(document).on('turbolinks:load', function() {
 
 So don't forget to replace all your JavaScript code accordingly.
 
-This doc is work in progress. At CF we are still testing all the changes and stability of Rails 5 ourselves. Don't make these changes on a production app without talking to your tutor or mentor first!
+## Add new files and folders
+
+The previous steps will add all the necessary configurations. If you were to generate a completely new Rails 5 app, though, your project folder would contain a few more folders and files. Those are **not** necessary for your app to work. But for the sake of completeness and if you are taking the CareerFoundry Web Development course you should make sure you have those files and folders in your project since they are necessary to complete some of the later tasks.
+
+Add the following paths to your app. If some folders don't exist, just add them. For example inside the `app` folder of your app you will not have a `channels` folder. So you'll have to add that one, as well as the `applictaion_cable` folder in the `channels` folder. **It's absolutely essential that you do these things exactly as shown below.**
+
+- `/app/assets/config/manifest.js` and add this content:
+
+```javascript
+//= link_tree ../images
+//= link_directory ../javascripts .js
+//= link_directory ../stylesheets .css
+```
+
+- `/app/assets/javascripts/channels` (just the empty folder)
+
+- `/app/assets/javascripts/cable.js` and add this content:
+
+```javascript
+// Action Cable provides the framework to deal with WebSockets in Rails.
+// You can generate new channels where WebSocket features live using the rails generate channel command.
+//
+//= require action_cable
+//= require_self
+//= require_tree ./channels
+
+(function() {
+  this.App || (this.App = {});
+
+  App.cable = ActionCable.createConsumer();
+
+}).call(this);
+```
+
+- `/app/channels/application_cable/channel.rb` and add this content:
+
+```ruby
+module ApplicationCable
+  class Channel < ActionCable::Channel::Base
+  end
+end
+```
+
+- `/app/channels/application_cable/connection.rb` and add this content:
+
+```ruby
+module ApplicationCable
+  class Connection < ActionCable::Connection::Base
+  end
+end
+```
+
+- `/app/jobs/application_job.rb` and add this content:
+
+```ruby
+class ApplicationJob < ActiveJob::Base
+end
+```
+
+
+>This doc is work in progress. At CF we are still testing all the changes and stability of Rails 5 ourselves. Don't make these changes on a production app without talking to your tutor or mentor first!
