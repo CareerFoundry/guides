@@ -1,4 +1,4 @@
-Before you can upgrade your Rails app, you should make sure to follow the instruction in our BLOG POST to upgrade your Ruby version with rvm to 2.3.1 (when the blog post was written, the most recent version was 2.3.0. Now that's actually already outdated. So make sure to upgrade to 2.3.1)
+Before you can upgrade your Rails app, you should make sure to follow the instruction in our [BLOG POST](http://blog.careerfoundry.com/web-development/ruby-on-rails-5-its-here-find-out-whats-new-and-how-to-upgrade) to upgrade your Ruby version with `rvm` to 2.3.1 (when the blog post was written, the most recent version was 2.3.0. Now that's actually already outdated. So make sure to upgrade to 2.3.1)
 
 ## Update your Gemfile
 
