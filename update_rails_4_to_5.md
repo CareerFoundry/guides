@@ -59,7 +59,7 @@ Follow the instructions in Rails Guides: http://guides.rubyonrails.org/upgrading
 
 The main steps you need are:  2.2, 2.3, 2.4
 
-If you're using `protext_from_forgery` anywhere 2.12 is important, too. Otherwise that's probably all you need.
+If you're using `protect_from_forgery` anywhere 2.12 is important, too. Otherwise that's probably all you need.
 
 ## Update your JavaScript
 
