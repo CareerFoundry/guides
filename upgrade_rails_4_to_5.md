@@ -149,5 +149,6 @@ class ApplicationJob < ActiveJob::Base
 end
 ```
 
+## Contribute to this document
 
->This doc is work in progress. At CF we are still testing all the changes and stability of Rails 5 ourselves. Don't make these changes on a production app without talking to your tutor or mentor first!
+This doc is work in progress. At CF we are still testing all the changes and stability of Rails 5 ourselves. Don't make these changes on a production app without talking to your tutor or mentor first! If you notice anything that's missing or should be changed, feel free to submit a pull request or report an issue
