@@ -149,6 +149,13 @@ class ApplicationJob < ActiveJob::Base
 end
 ```
 
+<<<<<<< Updated upstream:upgrade_rails_4_to_5.md
 ## Contribute to this document
+=======
+## Rails 5 on Heroku
+
+In previous versions of Rails you needed `rails_12factor`. You don't actually need that gem anymore, now. Feel free to remove it from your `Gemfile`. If you run into any issues with Heroku, check out [this guide](https://devcenter.heroku.com/articles/getting-started-with-rails5)
+
+>>>>>>> Stashed changes:update_rails_4_to_5.md
 
 This doc is work in progress. At CF we are still testing all the changes and stability of Rails 5 ourselves. Don't make these changes on a production app without talking to your tutor or mentor first! If you notice anything that's missing or should be changed, feel free to submit a pull request or report an issue
