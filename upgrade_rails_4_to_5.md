@@ -78,6 +78,8 @@ You'll have to update them to look like this:
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 ```
 
+You also need to add `<%= action_cable_meta_tag %>` somewhere in there to add all the necessary ActionCable meta tags. 
+
 ## Update your JavaScript
 
 With Turbolinks 5 (got released together with Rails 5) neither `$(document).ready(function(){ ... })` nor `$(document).on('ready page:load', function(){ ... })` will work anymore. Instead they came up with an even better solution which loads even faster and even on page load:
