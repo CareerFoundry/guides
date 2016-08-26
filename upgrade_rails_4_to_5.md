@@ -96,7 +96,7 @@ So don't forget to replace all your JavaScript code accordingly.
 
 The previous steps will add all the necessary configurations. If you were to generate a completely new Rails 5 app, though, your project folder would contain a few more folders and files. Those are **not** necessary for your app to work. But for the sake of completeness and if you are taking the CareerFoundry Web Development course you should make sure you have those files and folders in your project since they are necessary to complete some of the later tasks.
 
-Add the following paths to your app. If some folders don't exist, just add them. For example inside the `app` folder of your app you will not have a `channels` folder. So you'll have to add that one, as well as the `applictaion_cable` folder in the `channels` folder. **It's absolutely essential that you do these things exactly as shown below.**
+Add the following paths to your app. If some folders don't exist, just add them. For example inside the `app` folder of your app you will not have a `channels` folder. So you'll have to add that one, as well as the `application_cable` folder in the `channels` folder. **It's absolutely essential that you do these things exactly as shown below.**
 
 - `/app/assets/config/manifest.js` and add this content:
 
